@@ -12,12 +12,12 @@
         <div>
             <%
               List<Produto> produtos;
-              produtos = (List<Produto>)request.getAttribute("produto");
+              produtos = (List<Produto>)request.getAttribute("produtos");
               for(Produto produto : produtos){
                   %>
                     <p><%=produto.getNome()%></p>
                     <a href="produto-detalhe?id=<%=produto.getId()%>">
-                    <img src="../../imagens/0<%=produto.getId()%>.jpg" alt="Produto 1"/>
+                    <img src="../imagens/0<%=produto.getId()%>.jpg" alt="Produto 1"/>
             </a>
             <p>R$ <%=produto.getPreço()%></p>
                   <%

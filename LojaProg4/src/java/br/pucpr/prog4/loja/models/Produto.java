@@ -5,8 +5,10 @@ public class Produto {
     private String nome;
     private double preço;
 
-    Produto(int i, String hd_Externo, double d) {
-        
+    Produto(int id, String nome, double preço) {
+        this.id = id;
+        this.nome = nome;
+        this.preço = preço;
     }
 
     public int getId() {

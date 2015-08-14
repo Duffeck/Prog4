@@ -20,7 +20,7 @@ public class ProdutoListaServlet extends HttpServlet {
 
             request.setAttribute("produtos", produtos);
             RequestDispatcher rd;
-            rd = request.getRequestDispatcher("/WEB-INF/SJP/produto/lista");
+            rd = request.getRequestDispatcher("/WEB-INF/JSP/ListaProdutos.jsp");
             rd.forward(request, response);
     }
 }
