@@ -12,7 +12,7 @@
             produto = (Produto)request.getAttribute("produto");
         %>
         Produto: <%=produto.getNome()%>
-        <img src="../imagens/0<%=produto.getId()%>.jpg" alt=""/>
         Preço: <%=produto.getPreço()%>
+        <img src="../imagens/0<%=produto.getId()%>.jpg" alt=""/> 
     </body>
 </html>

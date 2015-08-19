@@ -1,6 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="br.pucpr.prog4.loja.models.Produto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 	top: 0px;
 }
 body {
-	background-color: #E9E07A;
+	background-color: #ffffff;
 	font-size: 36;
 	text-align: left;
 	position: relative;
@@ -40,6 +41,15 @@ body {
 	width: auto;
         left: 25%;
 	top: 114px;
+}
+
+#prodCaixa{
+    border: 2px;
+    border-style: solid;
+    position: relative;
+    float: left;
+    width: 350px;
+    height: 350px;
 }
 </style>
 </head>
@@ -64,19 +74,16 @@ body {
       </ul>
     </div>
     <div id="listaItens">
-        <%
-                  List<Produto> produtos;
-                  produtos = (List<Produto>)request.getAttribute("produtos");
-                  for(Produto produto : produtos){
-                      %>
-                        <%=produto.getNome()%>
-                        <a href="produto-detalhe?id=<%=produto.getId()%>">
-                            <img src="../imagens/0<%=produto.getId()%>.jpg" width="300px" height="300px" alt="Produto 1"/>
+        <c:forEach var="produto" items="${produtos}">
+                        <div id="prodCaixa">
+                            <c:out value="${produto.nome}" />
+                            <br />
+                        R$ <c:out value="${produto.preço}" />
+                        <a href="produto-detalhe?id=<c:out value="${produto.id}" />">
+                            <img src="../imagens/0<c:out value="${produto.id}" />.jpg" width="300px" height="300px" alt="Produto 1"/>
                         </a>
-                        R$ <%=produto.getPreço()%>
-                      <%
-                  }
-                %>
+                        </div>
+        </c:forEach>
     </div>
 
 </body>

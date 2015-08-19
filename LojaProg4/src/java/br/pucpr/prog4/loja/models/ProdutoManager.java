@@ -18,6 +18,12 @@ public class ProdutoManager implements IProdutoManager{
         
         produto = new Produto(3, "SuperMan Lego", 50.00);
         produtos.add(produto);
+        
+        produto = new Produto(1, "HD Externo", 250.00);
+        produtos.add(produto);
+        
+        produto = new Produto(2, "SuperMan Lego", 50.00);
+        produtos.add(produto);
     }
     
     @Override
