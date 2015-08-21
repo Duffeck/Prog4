@@ -17,18 +17,12 @@ public class ProdutoDetalheServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            List<Produto> produtos = new ArrayList<Produto>(0);
+
             ProdutoManager pm = new ProdutoManager();
             int id = Integer.parseInt(request.getParameter("id"));
-            produtos = pm.obterTodos();
+
+            Produto produto = pm.obterPorId(id);
             
-            Produto produto = null;
-            
-            for(Produto prod:produtos){
-                if(prod.getId() == id)
-                    produto = prod;
-            }
 
             request.setAttribute("produto", produto);
             RequestDispatcher rd;

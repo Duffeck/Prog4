@@ -12,20 +12,11 @@ public class ProdutoManager implements IProdutoManager{
         
         produto = new Produto(1, "HD Externo", 250.00);
         produtos.add(produto);
-        produtos.add(produto);
-        produtos.add(produto);
-        produtos.add(produto);
         
         produto = new Produto(2, "Sony Experia Z3", 1500.00);
         produtos.add(produto);
-        produtos.add(produto);
-        produtos.add(produto);
-        produtos.add(produto);
         
         produto = new Produto(3, "SuperMan Lego", 50.00);
-        produtos.add(produto);
-        produtos.add(produto);
-        produtos.add(produto);
         produtos.add(produto);
         
     }
@@ -33,5 +24,13 @@ public class ProdutoManager implements IProdutoManager{
     @Override
     public List<Produto> obterTodos() {
         return produtos;
+    }
+    
+    public Produto obterPorId(int id){
+        for(Produto produto:produtos){
+            if(produto.getId() == id)
+                return produto;
+        }
+        return null;
     }
 }

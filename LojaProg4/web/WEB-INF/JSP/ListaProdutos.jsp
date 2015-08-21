@@ -48,13 +48,13 @@ ul.nav li {
 	border-bottom: 1px solid #666;
 }
 
-ul.nav a, ul.nav a:visited{
+a, a:visited{
 	text-decoration: none;
 	color: #ffffff;
 	padding: 5px 5px 5px 15px;
 }
 
-ul.nav a:hover, ul.nav a:active, ul.nav a:focus{
+a:hover,a:active,a:focus{
 	color: #cdcdcd;
 }
 
@@ -73,11 +73,11 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus{
     border: 2px;
     border-style: solid;
     position: relative;
-    float: right;
+    float: left;
     width: 325px;
     height: 350px;
     border-radius: 15px;
-    margin: 3px;
+    margin: 10px;
     padding-left: 25px;
 }
 .prodClass{
@@ -85,6 +85,12 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus{
     border-style: solid;
     border-radius: 15px;
     border-color: white;
+    width: 300px;
+    height: 300px;
+}
+#detalhes{
+    width: 100%;
+    height: 600px;
 }
 </style>
 <meta charset="utf-8">
@@ -92,9 +98,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus{
 </head>
 
 <body>
-	<header id="cabeçalho">
+    <a href="lista"><header id="cabeçalho">
     	Loja Virtual
     </header>
+    </a>
     <header id="menu">
     	asdasdasdasdasdasdasdasdasd
     </header>
@@ -112,11 +119,11 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus{
                             <c:out value="${produto.nome}" />
                             <br />
                         R$ <c:out value="${produto.preço}" />
-                        <a href="produto-detalhe?id=<c:out value="${produto.id}" />">
-                            <img class="prodClass" src="../imagens/0<c:out value="${produto.id}" />.jpg" width="300px" height="300px" alt="Produto 1"/>
+                        <a target="_self" onclick="load_home('produto-detalhe?id=<c:out value="${produto.id}"/>')" href="produto-detalhe?id=<c:out value="${produto.id}"/>">
+                            <img class="prodClass" src="../imagens/0<c:out value="${produto.id}" />.jpg" alt="Produto 1"/>
                         </a>
                         </div>
-        </c:forEach>
+            </c:forEach>
     </div>
 </body>
 </html>
