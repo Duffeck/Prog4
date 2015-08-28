@@ -1,7 +1,7 @@
 package br.pucpr.prog4.loja.controller;
 
 import br.pucpr.prog4.loja.models.Produto;
-import br.pucpr.prog4.loja.models.ProdutoManager;
+import br.pucpr.prog4.loja.models.ProdutoManagerImpl;
 import java.util.List;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +18,7 @@ public class ProdutoDetalheServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-            ProdutoManager pm = new ProdutoManager();
+            ProdutoManagerImpl pm = new ProdutoManagerImpl();
             int id = Integer.parseInt(request.getParameter("id"));
 
             Produto produto = pm.obterPorId(id);

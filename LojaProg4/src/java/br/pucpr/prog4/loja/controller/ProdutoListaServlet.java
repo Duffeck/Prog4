@@ -14,7 +14,7 @@ public class ProdutoListaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            IProdutoManager manager = new ProdutoManager();
+            IProdutoManager manager = new ProdutoManagerImpl();
             List<Produto> produtos;
             produtos = manager.obterTodos();
 

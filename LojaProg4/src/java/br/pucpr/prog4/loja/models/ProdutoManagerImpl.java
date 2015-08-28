@@ -3,7 +3,7 @@ package br.pucpr.prog4.loja.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdutoManager implements IProdutoManager{
+public class ProdutoManagerImpl implements IProdutoManager{
     private static List<Produto> produtos;
     
     static{
