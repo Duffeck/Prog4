@@ -13,7 +13,8 @@ public class ClienteManagerImpl implements IClienteManager{
 
     @Override
     public Cliente cadastrar(Cliente p) {
-        
+        p.setId(1);
+        return p;
     }
     
 }

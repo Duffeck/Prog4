@@ -7,8 +7,6 @@ package br.pucpr.prog4.loja.controller;
 
 import br.pucpr.prog4.loja.models.Cliente;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.servlet.RequestDispatcher;
@@ -41,7 +39,7 @@ public class ClienteServlet extends HttpServlet {
         cliente.setTipo(request.getParameter("tipo"));
         cliente.setNome(request.getParameter("nome"));
         String cpf = request.getParameter("cpf");
-        int CPF2 = Integer.parseInt(cpf);
+        long CPF2 = Long.parseLong(cpf);
         cliente.setCPF(CPF2);
         cliente.setComentario(request.getParameter("comentario"));
         cliente.setSexo(request.getParameter("sexo"));
@@ -53,6 +51,7 @@ public class ClienteServlet extends HttpServlet {
         }catch(ParseException e){
             
         }
+        cliente.getCPF();
     }
 
 }

@@ -17,7 +17,7 @@ public class Cliente {
 
     private String nome, sexo, comentario, tipo;
     private Date dataNasc;
-    private int CPF;
+    private long CPF;
     
     public Cliente(){
         
@@ -71,11 +71,11 @@ public class Cliente {
         this.dataNasc = dataNasc;
     }
 
-    public int getCPF() {
+    public long getCPF() {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    public void setCPF(long CPF) {
         this.CPF = CPF;
     }
 }
