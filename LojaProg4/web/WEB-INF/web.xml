@@ -29,4 +29,11 @@
             30
         </session-timeout>
     </session-config>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/WEB-INF/JSP/login.jsp</form-login-page>
+            <form-error-page>/WEB-INF/JSP/erroLogin.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
 </web-app>
