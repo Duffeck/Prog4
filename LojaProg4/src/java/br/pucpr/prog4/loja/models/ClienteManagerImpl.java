@@ -5,6 +5,8 @@
  */
 package br.pucpr.prog4.loja.models;
 
+import br.pucpr.prog4.loja.models.dao.*;
+
 /**
  *
  * @author lucas.duffeck
@@ -12,9 +14,23 @@ package br.pucpr.prog4.loja.models;
 public class ClienteManagerImpl implements IClienteManager{
 
     @Override
-    public Cliente cadastrar(Cliente p) {
-        p.setId(1);
-        return p;
+    public Cliente cadastrar(Cliente cliente) {
+        
+        IDaoManager manager;
+        manager = new JdbcDaoManager();
+        try{
+            manager.iniciar();
+            ClienteDao dao = manager.getClienteDao();
+            Cliente c;
+            c = dao.inserir(cliente);
+
+            manager.confirmarTransação();
+            manager.encerrar();
+            return c;
+        }catch(Exception e){
+            manager.abortarTransação();
+            throw e;
+        }
     }
     
 }

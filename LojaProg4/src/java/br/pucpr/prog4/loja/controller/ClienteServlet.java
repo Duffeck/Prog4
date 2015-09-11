@@ -6,6 +6,7 @@
 package br.pucpr.prog4.loja.controller;
 
 import br.pucpr.prog4.loja.models.Cliente;
+import br.pucpr.prog4.loja.models.ClienteManagerImpl;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,7 +52,8 @@ public class ClienteServlet extends HttpServlet {
         }catch(ParseException e){
             
         }
-        cliente.getCPF();
+       ClienteManagerImpl asdmasd = new ClienteManagerImpl();
+       asdmasd.cadastrar(cliente);
     }
 
 }

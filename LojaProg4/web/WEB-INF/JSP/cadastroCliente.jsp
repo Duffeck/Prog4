@@ -14,8 +14,8 @@
     <body>
         <h1>Meu Cadastro</h1>
             <form action="cadastro" method="POST">
-                    <input type="radio" name="tipo" value="fisico" /><label for="fisico">Pessoa Física</label>
-                    <input type="radio" name="tipo" value="juridico" /><label for="juridico">Pessoa Jurídica</label>
+                    <input type="radio" name="tipo" value="f" /><label for="fisico">Pessoa Física</label>
+                    <input type="radio" name="tipo" value="j" /><label for="juridico">Pessoa Jurídica</label>
                     <label for="nome">Nome Completo:</label><input type="text" name="nome" />
                     <label for="cpf">CPF:</label><input type="text" name="cpf" />
                     <label for="datanasc">Data Nascimento:</label><input type="date" name="datanasc" />
