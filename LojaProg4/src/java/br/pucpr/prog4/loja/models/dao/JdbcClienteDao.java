@@ -23,13 +23,13 @@ public class JdbcClienteDao implements ClienteDao{
 
     @Override
     public Cliente inserir(Cliente cliente) {
-        String sql = "INSERT INTO pessoa"
-                    +"('nome',"
-                    +"'sexo',"
-                    +"'cpf',"
-                    +"'comentario',"
-                    +"'tipo',"
-                    +"'dataNasc') "
+        String sql = "INSERT INTO pessoa "
+                    +"(nome,"
+                    +"sexo,"
+                    +"cpf,"
+                    +"comentario,"
+                    +"tipo,"
+                    +"dataNasc) "
                     +"VALUES "
                     +"(?, ?, ?, ?, ?, ?)";
         
