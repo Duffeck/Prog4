@@ -3,13 +3,10 @@ package br.pucpr.prog4.loja.models.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class JdbcDaoManager implements IDaoManager 
 {
     private Connection conexão;
-    private JdbcClienteDao clienteDao;
     
     public JdbcDaoManager()
     {
@@ -27,11 +24,9 @@ public class JdbcDaoManager implements IDaoManager
             url = "jdbc:mysql://localhost:3306/loja";//nome do schema
             conexão = DriverManager.getConnection(url, "root", "root");
             conexão.setAutoCommit(false);
-            clienteDao = new JdbcClienteDao(conexão);
-            //clienteDao.setConexão(conexão);
             
         }
-        catch( Exception ex )
+        catch(Exception ex )
         {
             throw new DaoException("Ocorreu um erro ao conectar ao banco de dados:" + 
                     ex.getMessage());
@@ -70,7 +65,7 @@ public class JdbcDaoManager implements IDaoManager
 
     @Override
     public ClienteDao getClienteDao() {
-        return clienteDao;
+        return new JdbcClienteDao(conexão);
     }
 
     
